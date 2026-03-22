@@ -9,13 +9,13 @@
 #define CT_MAX_TEMPORAL_FRAMES 128 /* Todo: Let the user decide */
 
 /* Idk I found this on stackoverflow 😭 */
-#define CHECK_CUDA_HOST(call) do {
-    cudaError_t err = (call);
-    if (err != cudaSuccess) {
-        fprintf(stderr, "CUDA error at %s:%d: %s\n",
-                __FILE__, __LINE__, cudaGetErrorString(err));
-        exit(EXIT_FAILURE);
-    }
+#define CHECK_CUDA_HOST(call) do { \
+    cudaError_t err = (call); \
+    if (err != cudaSuccess) { \
+        fprintf(stderr, "CUDA error at %s:%d: %s\n", \
+                __FILE__, __LINE__, cudaGetErrorString(err)); \
+        exit(EXIT_FAILURE); \
+    } \
 } while(0)
 
 typedef struct {
